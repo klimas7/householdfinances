@@ -8,7 +8,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3.6.0-jdk-11-slim'
-            args '-v /root/.m2:~/.m2'
+            args '-v /root/.m2:/home/ec2-user/.m2'
         }
     }
     stages {
