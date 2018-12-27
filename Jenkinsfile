@@ -6,7 +6,8 @@ pipeline {
         pollSCM ''
     }
     agent {
-        docker { image 'maven:3.6.0-jdk-11-slim' }
+        docker { image 'maven:3.6.0-jdk-11-slim'
+                 args -v /root/.m2:~/.m2}
     }
     stages {
         stage('Build') {
